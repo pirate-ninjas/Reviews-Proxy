@@ -70,7 +70,9 @@ app.get('/api/products/:id/qna', (req, res) => {
 
 app.post('/api/products/reviews', (req, res) => {
   axios.post(`http://18.220.158.113/api/products/reviews`, req.body)
-    .then((response) => res.send(response.data))
+    .then((response) => {
+      res.send(response.data);
+    })
     .catch((err) => {
       console.log(err);
       res.send(500);
